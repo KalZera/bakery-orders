@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
+// Importing the Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // lib firebase
 import firebase from 'firebase/app';
 import * as serviceWorker from './ServiceWorker';
@@ -9,6 +12,8 @@ import * as serviceWorker from './ServiceWorker';
 //adicionando configuração do firebase para login e functions
 const configFirebase = JSON.parse(process.env.REACT_APP_FIREBASE || '');
 firebase.initializeApp(configFirebase);
+
+
 
 ReactDOM.render(
   <React.StrictMode>
