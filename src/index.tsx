@@ -1,7 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-// import * as serviceWorker from './ServiceWorker';
+
+// lib firebase
+import firebase from 'firebase/app';
+import * as serviceWorker from './ServiceWorker';
+
+//adicionando configuração do firebase para login e functions
+const configFirebase = JSON.parse(process.env.REACT_APP_FIREBASE || '');
+firebase.initializeApp(configFirebase);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -10,7 +17,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// serviceWorker.unregister();
+serviceWorker.unregister();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
