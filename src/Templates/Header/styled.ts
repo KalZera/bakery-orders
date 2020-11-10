@@ -1,7 +1,7 @@
 import styled from "styled-components";
-
+import { colors } from "Styles/Colors";
 export const Container = styled.header`
-  background: #c4c4c4;
+  background: ${colors.orange};
   height: 60px;
   width: 100%;
 `;

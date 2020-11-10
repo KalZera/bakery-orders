@@ -1,14 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import {Routes} from 'Routes';
+import { Routes } from "Routes";
 
-import {Header} from 'Templates';
+import { Header } from "Templates";
+
+import { GlobalStyle } from "./GlobalStyled";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Routes/>
+      <GlobalStyle />
+      <Header />
+      <Routes />
     </div>
   );
 }

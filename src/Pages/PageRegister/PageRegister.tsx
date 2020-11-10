@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from "react";
 import { Form, Formik } from "formik";
 
-import { Container } from "Styles";
+import { Container } from "Styles/Container";
 import { Input, Button } from "Components";
-import { FieldForm } from "./styled";
+import { Content, FieldForm, PhotoApp, Label } from "./styled";
 
 import { UserService } from "Services";
 
@@ -31,28 +31,38 @@ export const PageRegister: FunctionComponent<Props> = () => {
         {({ submitForm }) => {
           return (
             <Container>
-              <Form>
-                <FieldForm>
-                  <Input type="text" placeholder="Nome" name="name" />
-                </FieldForm>
-                <FieldForm>
-                  <Input type="text" placeholder="Email" name="email" />
-                </FieldForm>
-                <FieldForm>
-                  <Input type="text" placeholder="Telefone" name="phone" />
-                </FieldForm>
-                <FieldForm>
-                  <Input type="text" placeholder="CPF" name="cpf" />
-                </FieldForm>
-                <FieldForm>
-                  <Input type="password" placeholder="Senha" name="password" />
-                </FieldForm>
-                <Button
-                  text="Cadastrar"
-                  onClick={submitForm}
-                  variant="success"
-                />
-              </Form>
+              <Content>
+                <PhotoApp>
+                  <img src="/Images/bread2.png" alt="" width={200} />
+                </PhotoApp>
+                <Label>Cadastre-se</Label>
+                <Form>
+                  <FieldForm>
+                    <Input type="text" placeholder="Nome" name="name" />
+                  </FieldForm>
+                  <FieldForm>
+                    <Input type="text" placeholder="Email" name="email" />
+                  </FieldForm>
+                  <FieldForm>
+                    <Input type="text" placeholder="Telefone" name="phone" />
+                  </FieldForm>
+                  <FieldForm>
+                    <Input type="text" placeholder="CPF" name="cpf" />
+                  </FieldForm>
+                  <FieldForm>
+                    <Input
+                      type="password"
+                      placeholder="Senha"
+                      name="password"
+                    />
+                  </FieldForm>
+                  <Button
+                    text="Cadastrar"
+                    onClick={submitForm}
+                    variant="success"
+                  />
+                </Form>
+              </Content>
             </Container>
           );
         }}
