@@ -5,6 +5,8 @@ import { Container } from "Styles";
 import { Input, Button } from "Components";
 import { FieldForm } from "./styled";
 
+import { UserService } from "Services";
+
 interface Props {}
 
 export const PageRegister: FunctionComponent<Props> = () => {
@@ -20,9 +22,10 @@ export const PageRegister: FunctionComponent<Props> = () => {
       <Formik
         initialValues={initialValue}
         onSubmit={(values) => {
-          alert("hello");
-          console.log("submit");
-          console.log(values);
+          const { name, cpf, phone, email, password } = values;
+          UserService.RegisterUserAuth({ name, cpf, phone, email }, password)
+            .then(() => alert("cadastrado"))
+            .catch(() => alert("não cadastrou"));
         }}
       >
         {({ submitForm }) => {
