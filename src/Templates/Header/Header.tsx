@@ -5,5 +5,5 @@ import { Container } from "./styled";
 interface Props {}
 
 export const Header: FunctionComponent<Props> = () => {
-  return <Container>Init Project</Container>;
+  return <Container></Container>;
 };

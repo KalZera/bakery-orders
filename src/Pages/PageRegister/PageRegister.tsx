@@ -3,7 +3,7 @@ import { Form, Formik } from "formik";
 
 import { Container } from "Styles/Container";
 import { Input, Button } from "Components";
-import { Content, FieldForm, PhotoApp, Label } from "./styled";
+import { Content, FieldForm, PhotoApp, Label, BoxButton } from "./styled";
 
 import { UserService } from "Services";
 
@@ -56,11 +56,13 @@ export const PageRegister: FunctionComponent<Props> = () => {
                       name="password"
                     />
                   </FieldForm>
-                  <Button
-                    text="Cadastrar"
-                    onClick={submitForm}
-                    variant="success"
-                  />
+                  <BoxButton>
+                    <Button
+                      text="Cadastrar"
+                      onClick={submitForm}
+                      variant="success"
+                    />
+                  </BoxButton>
                 </Form>
               </Content>
             </Container>

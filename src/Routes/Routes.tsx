@@ -7,7 +7,7 @@ import { Route, Switch, Redirect, BrowserRouter } from "react-router-dom";
 import { PageHome, PageAuthentication, PageRegister } from "Pages";
 
 export const PathsDefault = {
-  home: "/",
+  home: "/home",
   authentication: "/auth",
   register: "/register",
 };
@@ -29,6 +29,7 @@ export const Routes: FunctionComponent = () => {
   return (
     <BrowserRouter>
       <Switch>
+        <Route exact path={"/"} component={PageRegister} />
         <Route exact path={PathsDefault["home"]} component={PageHome} />
         <Route exact path={PathsDefault["register"]} component={PageRegister} />
         <Route

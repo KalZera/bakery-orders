@@ -15,6 +15,7 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
   padding: 30px;
+  margin-top: 10px;
 `;
 
 export const PhotoApp = styled.div`
@@ -33,4 +34,10 @@ export const Label = styled.div`
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
+`;
+
+export const BoxButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
