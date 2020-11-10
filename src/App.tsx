@@ -1,13 +1,13 @@
 import React from 'react';
 
-import {Routes} from 'Routes'
+import {Routes} from 'Routes';
+
+import {Header} from 'Templates';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Init Project
-      </header>
+      <Header/>
       <Routes/>
     </div>
   );
