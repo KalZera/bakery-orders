@@ -18,13 +18,6 @@ export const Content = styled.div`
   margin-top: 10px;
 `;
 
-export const PhotoApp = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-`;
-
 export const Label = styled.div`
   display: flex;
   justify-content: center;

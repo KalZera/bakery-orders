@@ -1,15 +1,18 @@
 import React, { FunctionComponent } from "react";
+import { useHistory } from "react-router-dom";
 import { Form, Formik } from "formik";
 
 import { Container } from "Styles/Container";
 import { Input, Button } from "Components";
-import { Content, FieldForm, PhotoApp, Label, BoxButton } from "./styled";
+import { LogoLogin } from "Templates";
+import { Content, FieldForm, Label, BoxButton } from "./styled";
 
 import { UserService } from "Services";
 
 interface Props {}
 
 export const PageRegister: FunctionComponent<Props> = () => {
+  const history = useHistory();
   const initialValue = {
     name: "",
     email: "",
@@ -24,7 +27,7 @@ export const PageRegister: FunctionComponent<Props> = () => {
         onSubmit={(values) => {
           const { name, cpf, phone, email, password } = values;
           UserService.RegisterUserAuth({ name, cpf, phone, email }, password)
-            .then(() => alert("cadastrado"))
+            .then(() => history.push("/home"))
             .catch(() => alert("não cadastrou"));
         }}
       >
@@ -32,9 +35,7 @@ export const PageRegister: FunctionComponent<Props> = () => {
           return (
             <Container>
               <Content>
-                <PhotoApp>
-                  <img src="/Images/bread2.png" alt="" width={200} />
-                </PhotoApp>
+                <LogoLogin />
                 <Label>Cadastre-se</Label>
                 <Form>
                   <FieldForm>
@@ -61,6 +62,13 @@ export const PageRegister: FunctionComponent<Props> = () => {
                       text="Cadastrar"
                       onClick={submitForm}
                       variant="success"
+                    />
+                  </BoxButton>
+                  <BoxButton>
+                    <Button
+                      text="Já sou cadastrado, Entrar"
+                      onClick={() => history.push("/auth")}
+                      variant="link"
                     />
                   </BoxButton>
                 </Form>

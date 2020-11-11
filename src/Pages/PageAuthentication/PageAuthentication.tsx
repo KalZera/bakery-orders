@@ -6,6 +6,7 @@ import "firebase/auth";
 
 import { Container } from "Styles/Container";
 import { Input, Button } from "Components";
+import { LogoLogin } from "Templates";
 import { Content, FieldForm, Label, BoxButton } from "./styled";
 
 interface Props {}
@@ -35,7 +36,8 @@ export const PageAuthentication: FunctionComponent<Props> = () => {
           return (
             <Container>
               <Content>
-                <Label>Logar</Label>
+                <LogoLogin />
+                <Label>Entrar</Label>
                 <Form>
                   <FieldForm>
                     <Input type="text" placeholder="Email" name="email" />
@@ -47,16 +49,19 @@ export const PageAuthentication: FunctionComponent<Props> = () => {
                       name="password"
                     />
                   </FieldForm>
+
                   <BoxButton>
-                    <Button
-                      text="Cadastrar"
-                      onClick={() => history.push("/register")}
-                      variant="success"
-                    />
                     <Button
                       text="Entrar"
                       onClick={submitForm}
                       variant="primary"
+                    />
+                  </BoxButton>
+                  <BoxButton>
+                    <Button
+                      text="Não é cadastrado? clique aqui!"
+                      onClick={() => history.push("/register")}
+                      variant="link"
                     />
                   </BoxButton>
                 </Form>
